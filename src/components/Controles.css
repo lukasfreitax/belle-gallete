@@ -1,0 +1,28 @@
+.seta {
+  position: absolute; z-index: 5; width: 46px; height: 46px; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid rgba(244, 238, 228, 0.85);
+  background: rgba(31, 48, 64, 0.28); backdrop-filter: blur(4px);
+  transition: background var(--transicao), color var(--transicao);
+}
+.seta:hover { background: var(--creme); color: var(--azul-profundo); }
+.seta svg { width: 20px; height: 20px; }
+.seta--esq { left: 12px; }
+.seta--dir { right: 12px; }
+
+.pontos { display: flex; align-items: center; justify-content: center; gap: 12px; }
+.ponto { transition: background var(--transicao), width var(--transicao); }
+.pontos--bolinha .ponto { width: 12px; height: 12px; border-radius: 50%; border: 1px solid var(--creme); }
+.pontos--bolinha .ponto--ativo { background: var(--creme); }
+.pontos--barra .ponto { width: 32px; height: 3px; border-radius: 2px; background: rgba(244, 238, 228, 0.35); }
+.pontos--barra .ponto--ativo { background: var(--creme); width: 40px; }
+
+.dica {
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  font-size: 0.72rem; letter-spacing: 0.26em; text-transform: uppercase; text-align: center;
+  color: var(--texto-suave); max-width: 220px;
+}
+.dica__fio { width: 1px; height: 14px; background: var(--linha); }
+.dica__mouse { width: 34px; height: 34px; opacity: 0.9; }
+.dica__seta { width: 22px; height: 22px; }
+.dica:hover { color: var(--creme); }

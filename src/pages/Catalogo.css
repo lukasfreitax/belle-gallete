@@ -1,0 +1,80 @@
+.catalogo { background: var(--azul-base); min-height: calc(100svh - 96px); display: flex; flex-direction: column; }
+
+/* Faixa 1 */
+.catalogo__topo { background: var(--azul-profundo); padding: 30px 12px 0; text-align: center; }
+.catalogo__titulo { font-family: var(--fonte-titulo); font-weight: 400; font-size: clamp(3rem, 12vw, 4.6rem); line-height: 1.05; margin-top: 8px; }
+.catalogo__sub { font-family: var(--fonte-titulo); font-style: italic; font-weight: 300; font-size: 1.35rem; color: var(--texto-suave); margin-top: 4px; }
+
+.abas { display: flex; justify-content: center; margin-top: 26px; border-top: 1px solid var(--linha); }
+.aba {
+  flex: 1 1 0; max-width: 220px; display: flex; flex-direction: column; align-items: center; gap: 6px;
+  padding: 14px 4px 12px; border-bottom: 3px solid transparent;
+  font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; text-align: center;
+  color: var(--texto-suave); opacity: 0.75;
+  border-left: 1px solid var(--linha);
+}
+.aba:first-child { border-left: 0; }
+.aba svg { width: 30px; height: 30px; }
+.aba:hover { opacity: 1; }
+.aba--ativa { opacity: 1; color: var(--creme); border-bottom-color: var(--rosa); background: rgba(244, 238, 228, 0.06); }
+
+/* Faixa 2 */
+.catalogo__vitrine {
+  position: relative; flex: 1; overflow: hidden; padding: 34px 56px 56px;
+  background: radial-gradient(120% 80% at 50% 0%, var(--azul-superficie) 0%, var(--azul-base) 60%);
+  display: flex; align-items: center; justify-content: center;
+}
+.catalogo__vitrine .seta { top: 34%; }
+
+.palco { position: relative; z-index: 1; width: 100%; max-width: 420px; animation: aparecer 0.5s ease; }
+.palco__foto {
+  width: 86%; aspect-ratio: 3 / 4; object-fit: cover; margin: 0 auto;
+  border-radius: 999px; border: 2px solid rgba(244, 238, 228, 0.55);
+  box-shadow: 0 24px 50px rgba(15, 25, 35, 0.45);
+}
+.card {
+  position: relative; margin: -56px -34px 0; padding: 26px 24px 24px;
+  background: rgba(31, 48, 64, 0.78); backdrop-filter: blur(14px);
+  border: 1px solid rgba(244, 238, 228, 0.3); border-radius: var(--raio-card);
+  box-shadow: 0 18px 40px rgba(15, 25, 35, 0.4);
+}
+.card__selo { font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--texto-suave); }
+.card__linha { display: block; width: 64px; height: 1px; background: var(--rosa); margin: 12px 0 14px; }
+.card__titulo { font-family: var(--fonte-titulo); font-weight: 400; font-size: 2.4rem; line-height: 1.05; }
+.card__texto { margin: 14px 0 22px; font-size: 1rem; line-height: 1.7; color: var(--texto-suave); }
+.card .botao { width: 100%; padding-inline: 14px; font-size: 0.72rem; }
+
+.vazio { text-align: center; padding: 60px 20px; color: var(--texto-suave); }
+.vazio__titulo { font-family: var(--fonte-titulo); font-size: 2.6rem; color: var(--creme); }
+
+/* Faixa 3 */
+.catalogo__rodape {
+  background: var(--azul-profundo); border-top: 1px solid var(--linha);
+  padding: 20px 16px 24px; display: flex; flex-direction: column; align-items: center; gap: 14px;
+}
+
+@keyframes aparecer { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+@media (min-width: 900px) {
+  .catalogo { min-height: calc(100svh - 112px); }
+  .catalogo__topo { padding-top: 22px; }
+  .catalogo__titulo { font-size: 3.6rem; margin-top: 4px; }
+  .catalogo__sub { font-size: 1.25rem; }
+  .abas { margin-top: 16px; }
+  .abas { max-width: 960px; margin-inline: auto; }
+  .aba { font-size: 0.76rem; padding: 12px 8px 10px; flex-direction: row; justify-content: center; gap: 12px; }
+  .aba svg { width: 26px; height: 26px; }
+  .catalogo__vitrine { padding: 28px 90px 28px; }
+  .catalogo__vitrine .seta { top: 50%; transform: translateY(-50%); }
+  .catalogo__vitrine .seta--esq { left: 28px; }
+  .catalogo__vitrine .seta--dir { right: 28px; }
+  .palco { max-width: 1020px; display: grid; grid-template-columns: 1fr 1fr; align-items: center; }
+  .palco__foto { width: auto; height: clamp(300px, 46vh, 540px); aspect-ratio: 3 / 4.1; margin: 0; justify-self: end; }
+  .card { margin: 0 0 0 -90px; padding: 30px 34px 30px; }
+  .card__titulo { font-size: 2.9rem; }
+  .card__texto { margin: 10px 0 18px; }
+  .card .botao { width: auto; padding-inline: 26px; font-size: 0.78rem; }
+  .catalogo__rodape { flex-direction: row; justify-content: center; gap: 48px; padding: 16px 0; }
+  .catalogo__rodape .dica { flex-direction: row; gap: 14px; max-width: none; }
+  .catalogo__rodape .dica__fio, .catalogo__rodape .dica__seta { display: none; }
+}

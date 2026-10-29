@@ -1,0 +1,19 @@
+/* Design tokens: única fonte de verdade das cores, fontes e medidas.
+   Para mudar o tom de azul do site inteiro, altere apenas aqui. */
+:root {
+  --azul-profundo: #1f3040;
+  --azul-base: #4a6580;
+  --azul-superficie: #5f7b96;
+  --creme: #f4eee4;
+  --rosa: #c2386b;
+
+  --texto: #f4eee4;
+  --texto-suave: rgba(244, 238, 228, 0.88);
+  --linha: rgba(244, 238, 228, 0.28);
+
+  --fonte-titulo: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --fonte-corpo: 'Jost', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --raio-card: 28px;
+  --transicao: 0.35s ease;
+}

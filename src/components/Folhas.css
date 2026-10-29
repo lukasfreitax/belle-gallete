@@ -1,0 +1,7 @@
+.folhas {
+  position: absolute; bottom: 0; width: 96px; height: auto;
+  color: var(--creme); opacity: 0.28; pointer-events: none; z-index: 0;
+}
+.folhas--esquerda { left: 0; }
+.folhas--direita { right: 0; transform: scaleX(-1); }
+@media (min-width: 900px) { .folhas { width: 190px; } }

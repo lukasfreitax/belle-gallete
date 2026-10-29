@@ -1,0 +1,7 @@
+.pagina {
+  min-height: calc(100svh - 96px); display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 22px; padding: 60px 28px; text-align: center;
+  background: radial-gradient(120% 80% at 50% 0%, var(--azul-superficie) 0%, var(--azul-base) 60%);
+}
+.pagina__titulo { font-family: var(--fonte-titulo); font-weight: 400; font-size: clamp(2.6rem, 9vw, 4rem); line-height: 1.05; }
+.pagina__texto { max-width: 520px; font-size: 1.05rem; line-height: 1.75; color: var(--texto-suave); }

@@ -2,7 +2,7 @@
 
 Catálogo digital interativo para a **Belle Galette Pâtisserie**, confeitaria artesanal especializada em macarons franceses.
 
-> **Status:** em definição. Requisitos em rascunho, aguardando validação da cliente.
+> **Status:** em definição. Requisitos em rascunho, aguardando validação da cliente (Gisele).
 > **Última atualização:** 29/10/2026
 
 ---
@@ -103,7 +103,8 @@ Esses itens podem ser reavaliados em fases futuras.
 
 ## 6. Identidade visual
 
-Referência estética em protótipos (aguardando aprovação da cliente).
+Referência estética em protótipos (aguardando aprovação da cliente). Arquivos em `docs/design/`.
+
 - **Cores:** azul acinzentado como base, creme para textos e respiros, rosa framboesa como acento pontual.
 - **Tipografia:** serifada elegante nos títulos; sem serifa leve no corpo.
 - **Estilo:** fotografia ocupando a maior área, fundo desfocado com a própria imagem, elementos de vidro (*glass*) com moderação, folhas decorativas apenas como detalhe.
@@ -137,15 +138,15 @@ Estrutura prevista:
 belle-gallete/
 ├── docs/
 │   ├── design/          protótipos e referências visuais
-│   ├── requisitos.md    (a criar, se este README ficar extenso)
 │   ├── decisoes.md      decisões de projeto e justificativas
-│   └── validacoes.md    registro de aprovações e pedidos da cliente
+│   └── validacoes.md    (a criar) registro de aprovações e pedidos da cliente
 ├── public/
 ├── src/
 │   ├── assets/          imagens e logo
 │   ├── components/      peças reutilizáveis da interface
 │   ├── pages/           telas (Home, Catálogo, Pedidos)
 │   ├── data/            produtos, categorias e ocasiões
+│   ├── hooks/           lógica reutilizável (carrossel)
 │   ├── services/        integrações (WhatsApp, futura API)
 │   ├── styles/          tokens e estilos globais
 │   └── App.jsx
@@ -215,12 +216,35 @@ Necessidade → Requisito → Protótipo → Validação → Arquitetura → Imp
 
 ## 12. Como executar
 
-*(será preenchido após a branch `feature/base-projeto`)*
+Requisitos: Node 20.19+ (ou 22.12+) e npm.
 
 ```bash
-npm install
-npm run dev
+npm install      # instala as dependências do package.json
+npm run dev      # servidor de desenvolvimento (http://localhost:5173)
+npm run build    # gera a versão de produção em dist/
 ```
+
+### Rotas
+
+| Endereço | Página |
+|----------|--------|
+| `/` | Home |
+| `/catalogo` e `/catalogo/:categoriaId` | Catálogo (abas de categoria + carrossel de ocasiões) |
+| `/catalogo/:categoriaId/:ocasiaoId` | Galeria de modelos da ocasião |
+| `/sobre` | Sobre a Belle (conteúdo provisório) |
+| `/pedidos` | Pedidos via WhatsApp |
+
+### Onde mexer
+
+| Quero... | Arquivo |
+|----------|---------|
+| Trocar cores, fontes ou medidas | `src/styles/tokens.css` |
+| Adicionar ocasiões, modelos ou fotos | `src/data/catalogo.js` e `public/images/` |
+| Trocar o número do WhatsApp | `src/services/whatsapp.js` |
+| Mexer em uma tela | `src/pages/` |
+| Mexer em cabeçalho, setas, pontos | `src/components/` |
+
+> **Atenção:** as fotos em `public/images/` são provisórias (recortes dos protótipos). Substitua pelas fotos reais da Belle mantendo os nomes, ou altere os nomes em `src/data/catalogo.js`.
 
 ---
 
